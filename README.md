@@ -1,4 +1,5 @@
 # shire-atomic
+[![Build Status](https://travis-ci.org/Promaethius/shire-atomic.svg?branch=master)](https://travis-ci.org/Promaethius/shire-atomic)
 ## Practical Kubernetes
 * Based on the Fedora 29 RPM atomic host.
 * Implements CoreOS philosophy by removing all interpreted language dependencies.

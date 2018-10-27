@@ -1,6 +1,0 @@
-{
-    "ref": "fedora/29/${basearch}/shire-atomic-host",
-    "ex-jigdo-spec": "fedora-atomic-host.spec",
-    "repos": ["fedora-29", "fedora-29-updates", "dustymabe-ignition"],
-    "include": "fedora-atomic-host-base.json"
-}
