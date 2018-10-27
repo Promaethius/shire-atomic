@@ -8,4 +8,4 @@ FILE=${FILELS[0]}
 ostree --repo=/srv/repo init --mode=archive-z2
 rpm-ostree compose tree  --cachedir=/srv  --repo=/srv/repo $FILE
 
-tar -zvcf /manifests/repo.tar.gz /srv
+tar -zcf /manifests/repo.tar.gz /srv
