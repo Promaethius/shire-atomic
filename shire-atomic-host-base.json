@@ -15,6 +15,7 @@
 
     "initramfs-args": ["--no-hostonly"],
     "boot_location": "new",
+    "tmp-is-dir": true,
 
     "install-langs": [
       "en_US"
