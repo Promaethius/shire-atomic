@@ -11,17 +11,13 @@ script:
   -v $TRAVIS_BUILD_DIR:/manifests 
   -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv
   build-atomic
-after_success:
-- sudo docker build -t quay.io/promaethius/deploy-atomic:$TRAVIS_BRANCH $TRAVIS_BUILD_DIR/images/deploy
-- mkdir -p $HOME/.docker
-- |
-  cat > $HOME/.docker/config.json << EOF
-  {
-    "auths": {
-      "quay.io": {
-        "auth": "$TOKEN"
-      }
-    }
-  }
-  EOF
-- docker push quay.io/promaethius/deploy-atomic:$TRAVIS_BRANCH
+before_deploy:
+  - git config --local user.name "Jonathan Bryant"
+  - git config --local user.email "jonathan@videaris.com"
+  - git tag "shire-atomic-$(date +'%Y%m%d%H')-$(git log --format=%h -1)"
+deploy:
+  provider: releases
+  api_key: "$OAUTH"
+  file: "$TRAVIS_BUILD_DIR/repo.tar.gz"
+  skip_cleanup: true
+  overwrite: true
