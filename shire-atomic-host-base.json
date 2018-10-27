@@ -77,7 +77,5 @@
                          "microcode_ctl",
 			 "cri-o", "rkt"],
 
-    "default_target": "multi-user.target",
-
-    "units": ["cri-o.service", "iptables.service", "ip6tables.service"]
+    "default_target": "multi-user.target"
 }
