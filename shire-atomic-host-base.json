@@ -7,6 +7,7 @@
     "selinux": true,
 
     "documentation": false,
+    "machineid-compat": false,
 
     "automatic_version_prefix": "29",
     "mutate-os-release": "29",
