@@ -5,8 +5,7 @@ services:
 before_install:
 - docker build -t build-atomic $TRAVIS_BUILD_DIR/images/build
 script:
-- docker run --privileged --rm -v $TRAVIS_BUILD_DIR:/manifests -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv
-  build-atomic
+- docker run --privileged --rm -v $TRAVIS_BUILD_DIR:/manifests -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv build-atomic
 before_deploy:
 - git config --local user.name "Jonathan Bryant"
 - git config --local user.email "jonathan@videaris.com"
