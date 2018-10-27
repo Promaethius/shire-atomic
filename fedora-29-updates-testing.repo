@@ -1,0 +1,10 @@
+[fedora-29-updates-testing]
+name=Fedora 29 - $basearch - Test Updates
+failovermethod=priority
+#baseurl=http://download.fedoraproject.org/pub/fedora/linux/updates/testing/29/$basearch/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=updates-testing-f29&arch=$basearch
+enabled=1
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-29-$basearch
+skip_if_unavailable=False

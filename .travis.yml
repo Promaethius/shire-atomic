@@ -1,0 +1,27 @@
+sudo: enabled
+dist: trusty
+services:
+- docker
+before_install:
+- docker build -t build-atomic $TRAVIS_BUILD_DIR/images/build
+script:
+- docker run 
+  --privileged 
+  --rm 
+  -v $TRAVIS_BUILD_DIR:/manifests 
+  -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv
+  build-atomic
+after_success:
+- sudo docker build -t quay.io/promaethius/deploy-atomic:$TRAVIS_BRANCH $TRAVIS_BUILD_DIR/images/deploy
+- mkdir -p $HOME/.docker
+- |
+  cat > $HOME/.docker/config.json << EOF
+  {
+    "auths": {
+      "quay.io": {
+        "auth": "$TOKEN"
+      }
+    }
+  }
+  EOF
+- docker push quay.io/promaethius/deploy-atomic:$TRAVIS_BRANCH

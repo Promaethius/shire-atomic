@@ -1,0 +1,12 @@
+[fedora-29-updates]
+name=Fedora 29 - $basearch - Updates
+failovermethod=priority
+#baseurl=http://download.fedoraproject.org/pub/fedora/linux/updates/29/$basearch/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=updates-released-f29&arch=$basearch
+enabled=1
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-29-$basearch
+skip_if_unavailable=False
