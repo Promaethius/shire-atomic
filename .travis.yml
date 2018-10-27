@@ -5,19 +5,16 @@ services:
 before_install:
 - docker build -t build-atomic $TRAVIS_BUILD_DIR/images/build
 script:
-- docker run 
-  --privileged 
-  --rm 
-  -v $TRAVIS_BUILD_DIR:/manifests 
-  -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv
+- docker run --privileged --rm -v $TRAVIS_BUILD_DIR:/manifests -v $TRAVIS_BUILD_DIR/images/deploy/repo:/srv
   build-atomic
 before_deploy:
-  - git config --local user.name "Jonathan Bryant"
-  - git config --local user.email "jonathan@videaris.com"
-  - git tag "shire-atomic-$(date +'%Y%m%d%H')-$(git log --format=%h -1)"
+- git config --local user.name "Jonathan Bryant"
+- git config --local user.email "jonathan@videaris.com"
+- git tag "shire-atomic-$(date +'%Y%m%d%H')-$(git log --format=%h -1)"
 deploy:
   provider: releases
-  api_key: "$OAUTH"
-  file: "$TRAVIS_BUILD_DIR/repo.tar.gz"
-  skip_cleanup: true
-  overwrite: true
+  api_key:
+    secure: SSV3KlJ7C7J5MFfqlSJKMEAD/mDpxCcqcz4QALf1DiCc+gbELdrT642io8kCebpdN9b2kKaU3bQf0q5ClafRyin0cqK++zMCc6w9j9LDD8fCgBlAYxt/DE8/oICvDyYbTpQpBm0GnM2w6ISuQEPNfP7CCLLoKC+Haf/UiuyhIpp8ShN/TiSuCRumZScRzyTBFnCovCg27fZDZfDsaU9Do/ZVvOJMFS4bD1RSR5jSBIZ7J58hNyy33SIUqW2Wsrm2+wD2o0DUCUhGkcTTPBNSCkzGDpghN/6oNYIyS9rHjA0lUIuOu7oHpBayNSwiZmGp+TIDb2jUz2Qb0g6Uh/+CJJOWETjaC/HsIgQk/al7DlVhljXyZuymGk8/dYgwp21la8gXRpQm2+1UCUKO6/Yh2aTWVO9GAFTzncxof5vwIht597sMN4k1onqU8o77C2D+I1Ri+CdEAjH1hXdJtxXGhO0PNZjHr835EAY5FFG+kad7s/OoXvHtpj5b4jTRynYXFh999MTLZoEW19zKKNJ+4eXeropFZnA4Y504g0Zas266g1ZJl2Nw95//dQ1C8s5buTLUs2LDpjAy/00dSGpNcp/SGFMB77X0FxBqbSWk0SDgYapXyxRF/bgglOqxMFTnW7U1lDCml+hbAEyrATgzc5JmLr2EAwtBwUNXz1bl500=
+  file: repo.tar.gz
+  on:
+    repo: Promaethius/shire-atomic
