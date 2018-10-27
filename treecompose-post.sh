@@ -68,6 +68,9 @@ EOF
 cat >/usr/lib/systemd/system-preset/42-shire.preset << EOF
 enable firstboot-complete.service
 enable growpart.service
+enable cri-o.service
+enable iptables.service
+enable ip6tables.service
 EOF
 
 cat > /etc/motd <<EOF
