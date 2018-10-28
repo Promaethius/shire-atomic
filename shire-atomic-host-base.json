@@ -49,7 +49,7 @@
          "iptables-services", "iptables",
          "NetworkManager",
          "hostname", "initscripts", "iproute", "iputils", "less",
-	 "ignition",
+         "ignition", "ignition-dracut",
          "openssh-clients", "openssh-server", "passwd",
          "policycoreutils", "procps-ng", "rootfiles", "rpm",
          "selinux-policy-targeted", "setup",
