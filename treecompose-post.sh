@@ -71,6 +71,7 @@ enable growpart.service
 enable cri-o.service
 enable iptables.service
 enable ip6tables.service
+enable dbus.service
 EOF
 
 cat > /etc/motd <<EOF
