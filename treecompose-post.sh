@@ -77,4 +77,4 @@ cat > /etc/motd <<EOF
 Shire Atomic (in development)
 EOF
 
-echo "Shire Atomic" > $(realpath /etc/os-release)
+sed -i -e 's/.*NAME\=.*/NAME\=\"Shire Atomic Host\"/' $(realpath /etc/os-release)
