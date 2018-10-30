@@ -42,9 +42,9 @@
 
     "packages-s390x": ["s390utils-base"],
 
-    "packages-x86_64": ["kernel-4.18.16-303.shire.fc29.x86_64", 
-                        "kernel-core-4.18.16-303.shire.fc29.x86_64", 
-                        "kernel-modules-4.18.16-303.shire.fc29.x86_64", 
+    "packages-x86_64": ["kernel-4.18.16-305.shire.fc29.x86_64", 
+                        "kernel-core-4.18.16-305.shire.fc29.x86_64", 
+                        "kernel-modules-4.18.16-305.shire.fc29.x86_64", 
                         "grub2", "grub2-efi-x64", "ostree-grub2",
                         "efibootmgr", "shim",
                         "microcode_ctl",
