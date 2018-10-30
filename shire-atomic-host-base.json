@@ -29,6 +29,26 @@
     "check-groups": { "type": "file", "filename": "group" },
 
     "recommends": false,
+	
+    "packages-aarch64": ["grub2-efi", "ostree-grub2",
+                         "efibootmgr", "shim",
+                         "uboot-tools", "uboot-images-armv8", "bcm283x-firmware"],
+
+    "packages-armhfp": ["extlinux-bootloader"],
+
+    "packages-ppc64": ["grub2", "ostree-grub2"],
+
+    "packages-ppc64le": ["grub2", "ostree-grub2"],
+
+    "packages-s390x": ["s390utils-base"],
+
+    "packages-x86_64": ["kernel-4.18.16-302.shire.fc29.x86_64", 
+                        "kernel-core-4.18.16-302.shire.fc29.x86_64", 
+                        "kernel-modules-4.18.16-302.shire.fc29.x86_64", 
+                        "grub2", "grub2-efi-x64", "ostree-grub2",
+                        "efibootmgr", "shim",
+                        "microcode_ctl",
+			"cri-o", "rkt"],
 
     "packages": [
          "glibc", "nss-altfiles", "shadow-utils",
@@ -60,23 +80,6 @@
          "bash-completion",
          "oddjob-mkhomedir",
          "attr"],
-
-    "packages-aarch64": ["grub2-efi", "ostree-grub2",
-                         "efibootmgr", "shim",
-                         "uboot-tools", "uboot-images-armv8", "bcm283x-firmware"],
-
-    "packages-armhfp": ["extlinux-bootloader"],
-
-    "packages-ppc64": ["grub2", "ostree-grub2"],
-
-    "packages-ppc64le": ["grub2", "ostree-grub2"],
-
-    "packages-s390x": ["s390utils-base"],
-
-    "packages-x86_64": ["grub2", "grub2-efi-x64", "ostree-grub2",
-                         "efibootmgr", "shim",
-                         "microcode_ctl",
-			 "cri-o", "rkt"],
 
     "default_target": "multi-user.target"
 }
