@@ -9,7 +9,6 @@ script:
 before_deploy:
 - git config --local user.name "Jonathan Bryant"
 - git config --local user.email "jonathan@videaris.com"
-- git tag "shire-atomic-$(date +'%Y%m%d%H')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
@@ -17,3 +16,4 @@ deploy:
   file: repo.tar.gz
   on:
     repo: Promaethius/shire-atomic
+    tags: true
