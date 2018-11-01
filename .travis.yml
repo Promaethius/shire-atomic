@@ -17,3 +17,4 @@ deploy:
   on:
     repo: Promaethius/shire-atomic
     tags: true
+    branch: master
